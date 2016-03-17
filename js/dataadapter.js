@@ -14,7 +14,6 @@
 **/
 function DataAdapter( args) {
 	this.async = true;
-	
 	this.url = null;
 	this.token = null;
 	this.proposal = null;
@@ -94,6 +93,7 @@ DataAdapter.prototype.post = function(url, data){
 	 url = this.getUrl(url);
 	 $.ajax({
 		  type: "POST",
+		  async : this.async,
 		  url: url,
 		  data: data,
 		  success: function(data){ 
